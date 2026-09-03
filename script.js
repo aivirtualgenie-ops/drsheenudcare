@@ -4,10 +4,14 @@ document.addEventListener("DOMContentLoaded", () => {
      YEAR
   ====================================================== */
 
-  const year = document.getElementById("year");
+  const year =
+    document.getElementById("year");
 
-  if (year) {
-    year.textContent = new Date().getFullYear();
+  if(year){
+
+    year.textContent =
+      new Date().getFullYear();
+
   }
 
 
@@ -15,31 +19,55 @@ document.addEventListener("DOMContentLoaded", () => {
      CINEMATIC INTRO
   ====================================================== */
 
-  const intro = document.getElementById("intro");
+  const intro =
+    document.getElementById("intro");
+
+
+  let introFinished = false;
 
 
   function finishIntro(){
 
-    if (!intro) return;
+    if(
+      !intro ||
+      introFinished
+    ){
+      return;
+    }
 
-    intro.classList.add("finished");
 
-    document.body.classList.remove("loading");
+    introFinished = true;
 
-    setTimeout(() => {
 
-      intro.remove();
+    intro.classList.add(
+      "finished"
+    );
 
-    }, 1100);
+
+    document.body.classList.remove(
+      "loading"
+    );
+
+
+    setTimeout(
+      () => {
+
+        if(intro){
+
+          intro.remove();
+
+        }
+
+      },
+      1100
+    );
 
   }
 
 
   /*
-    Give the logo enough time to actually reveal.
-
-    It doesn't wait forever if the video/network
-    is slow.
+    Wait until the page has loaded,
+    then allow the logo reveal to finish.
   */
 
   window.addEventListener(
@@ -48,7 +76,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
       setTimeout(
         finishIntro,
-        2500
+        2450
       );
 
     },
@@ -59,12 +87,12 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
   /*
-    Absolute fallback.
+    Safety fallback for slow connections.
   */
 
   setTimeout(
     finishIntro,
-    4500
+    4300
   );
 
 
@@ -73,13 +101,18 @@ document.addEventListener("DOMContentLoaded", () => {
   ====================================================== */
 
   const menuButton =
-    document.querySelector(".menu-button");
+    document.querySelector(
+      ".menu-button"
+    );
+
 
   const navigation =
-    document.querySelector(".navigation");
+    document.querySelector(
+      ".navigation"
+    );
 
 
-  if (
+  if(
     menuButton &&
     navigation
   ){
@@ -88,17 +121,23 @@ document.addEventListener("DOMContentLoaded", () => {
       "click",
       () => {
 
-        const open =
-          navigation.classList.toggle("open");
+        const isOpen =
+          navigation.classList.toggle(
+            "open"
+          );
+
 
         menuButton.classList.toggle(
           "active",
-          open
+          isOpen
         );
+
 
         menuButton.setAttribute(
           "aria-expanded",
-          open ? "true" : "false"
+          isOpen
+            ? "true"
+            : "false"
         );
 
       }
@@ -107,29 +146,33 @@ document.addEventListener("DOMContentLoaded", () => {
 
     navigation
       .querySelectorAll("a")
-      .forEach(link => {
+      .forEach(
+        link => {
 
-        link.addEventListener(
-          "click",
-          () => {
+          link.addEventListener(
+            "click",
+            () => {
 
-            navigation.classList.remove(
-              "open"
-            );
+              navigation.classList.remove(
+                "open"
+              );
 
-            menuButton.classList.remove(
-              "active"
-            );
 
-            menuButton.setAttribute(
-              "aria-expanded",
-              "false"
-            );
+              menuButton.classList.remove(
+                "active"
+              );
 
-          }
-        );
 
-      });
+              menuButton.setAttribute(
+                "aria-expanded",
+                "false"
+              );
+
+            }
+          );
+
+        }
+      );
 
   }
 
@@ -156,7 +199,7 @@ document.addEventListener("DOMContentLoaded", () => {
     ).matches;
 
 
-  if (
+  if(
     "IntersectionObserver" in window &&
     !reduceMotion
   ){
@@ -168,13 +211,14 @@ document.addEventListener("DOMContentLoaded", () => {
           entries.forEach(
             entry => {
 
-              if (
+              if(
                 entry.isIntersecting
               ){
 
                 entry.target.classList.add(
                   "visible"
                 );
+
 
                 observer.unobserve(
                   entry.target
@@ -196,28 +240,48 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
     revealElements.forEach(
-      element =>
-        observer.observe(element)
+      element => {
+
+        observer.observe(
+          element
+        );
+
+      }
     );
 
 
     staggerElements.forEach(
-      element =>
-        observer.observe(element)
+      element => {
+
+        observer.observe(
+          element
+        );
+
+      }
     );
 
   }
   else{
 
     revealElements.forEach(
-      element =>
-        element.classList.add("visible")
+      element => {
+
+        element.classList.add(
+          "visible"
+        );
+
+      }
     );
 
 
     staggerElements.forEach(
-      element =>
-        element.classList.add("visible")
+      element => {
+
+        element.classList.add(
+          "visible"
+        );
+
+      }
     );
 
   }
@@ -233,7 +297,7 @@ document.addEventListener("DOMContentLoaded", () => {
     );
 
 
-  if (
+  if(
     heroVideo &&
     !reduceMotion
   ){
@@ -243,11 +307,12 @@ document.addEventListener("DOMContentLoaded", () => {
 
     function updateParallax(){
 
-      if (
+      if(
         window.innerWidth <= 950
       ){
 
-        heroVideo.style.transform = "";
+        heroVideo.style.transform =
+          "";
 
         ticking = false;
 
@@ -297,7 +362,7 @@ document.addEventListener("DOMContentLoaded", () => {
       "scroll",
       () => {
 
-        if (!ticking){
+        if(!ticking){
 
           requestAnimationFrame(
             updateParallax
@@ -317,10 +382,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
   /* =====================================================
-     BUTTON MAGNETIC FEEL
+     DESKTOP BUTTON MAGNETIC EFFECT
   ====================================================== */
 
-  if (
+  if(
     !reduceMotion &&
     window.innerWidth > 950
   ){
@@ -329,50 +394,52 @@ document.addEventListener("DOMContentLoaded", () => {
       .querySelectorAll(
         ".button-primary, .nav-appointment"
       )
-      .forEach(button => {
+      .forEach(
+        button => {
 
-        button.addEventListener(
-          "mousemove",
-          event => {
+          button.addEventListener(
+            "mousemove",
+            event => {
 
-            const rect =
-              button.getBoundingClientRect();
-
-
-            const x =
-              event.clientX -
-              rect.left -
-              rect.width / 2;
+              const rect =
+                button.getBoundingClientRect();
 
 
-            const y =
-              event.clientY -
-              rect.top -
-              rect.height / 2;
+              const x =
+                event.clientX -
+                rect.left -
+                rect.width / 2;
 
 
-            button.style.transform =
-              `translate(
-                ${x * .07}px,
-                ${y * .07}px
-              )`;
-
-          }
-        );
+              const y =
+                event.clientY -
+                rect.top -
+                rect.height / 2;
 
 
-        button.addEventListener(
-          "mouseleave",
-          () => {
+              button.style.transform =
+                `translate(
+                  ${x * .07}px,
+                  ${y * .07}px
+                )`;
 
-            button.style.transform = "";
+            }
+          );
 
-          }
-        );
 
-      });
+          button.addEventListener(
+            "mouseleave",
+            () => {
+
+              button.style.transform =
+                "";
+
+            }
+          );
+
+        }
+      );
 
   }
-
 
 });
