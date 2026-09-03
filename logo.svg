@@ -1,1 +1,87 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 270"><title>Dr. Sheenu's D-Care Dental Clinic</title><g fill="none" stroke="#0b9ba0" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"><path d="M70 65C35 92 38 150 65 188c19 26 40 30 51 5 10-23 12-49 26-49s16 26 26 49c11 25 32 21 51-5 27-38 30-96-5-123-28-22-60-18-72 4-12-22-44-26-72-4Z"/><path d="M142 69v76"/></g><g font-family="DM Sans,Arial,sans-serif" fill="#5d777a"><text x="280" y="66" font-size="23" font-weight="700" letter-spacing="2">DR. SHEENU'S</text><text x="280" y="150" font-size="82" font-weight="700">D-Care</text><text x="285" y="202" font-size="35" font-weight="700" letter-spacing="3">DENTAL CLINIC</text></g></svg>
+<svg
+  xmlns="http://www.w3.org/2000/svg"
+  viewBox="0 0 760 190"
+  role="img"
+  aria-labelledby="title desc"
+>
+  <title id="title">Dr. Sheenu's D-Care Dental Clinic</title>
+
+  <desc id="desc">
+    Dr. Sheenu's D-Care Dental Clinic logo
+  </desc>
+
+
+  <!-- Tooth emblem -->
+
+  <g
+    fill="none"
+    stroke="#079da0"
+    stroke-width="6.5"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+  >
+
+    <path
+      d="
+        M70 38
+        C50 38 35 51 31 69
+        C26 92 35 121 50 138
+        C60 149 71 151 77 137
+        C84 122 85 101 95 101
+        C105 101 106 122 113 137
+        C119 151 130 149 140 138
+        C155 121 164 92 159 69
+        C155 51 140 38 120 38
+        C107 38 99 44 95 54
+        C91 44 83 38 70 38
+        Z
+      "
+    />
+
+    <path d="M95 55V108"/>
+
+  </g>
+
+
+  <!-- Wordmark -->
+
+  <g
+    fill="#61777a"
+    font-family="DM Sans, Arial, sans-serif"
+  >
+
+    <text
+      x="180"
+      y="51"
+      font-size="14"
+      font-weight="700"
+      letter-spacing="2"
+    >
+      DR. SHEENU'S
+    </text>
+
+
+    <text
+      x="178"
+      y="114"
+      font-size="59"
+      font-weight="700"
+      letter-spacing="-2.5"
+    >
+      D-Care
+    </text>
+
+
+    <text
+      x="181"
+      y="148"
+      font-size="21"
+      font-weight="700"
+      letter-spacing="2.5"
+    >
+      DENTAL CLINIC
+    </text>
+
+  </g>
+
+</svg>
