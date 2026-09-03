@@ -1,95 +1,142 @@
-<svg
-  xmlns="http://www.w3.org/2000/svg"
-  viewBox="0 0 820 210"
-  role="img"
-  aria-labelledby="title desc"
->
+<svg xmlns="http://www.w3.org/2000/svg"
+     viewBox="0 0 1050 420"
+     role="img"
+     aria-labelledby="title desc">
 
-  <title id="title">
-    Dr. Sheenu's D-Care Dental Clinic
-  </title>
-
+  <title id="title">Dr. Sheenu's D-Care Dental Clinic</title>
   <desc id="desc">
-    Dr. Sheenu's D-Care Dental Clinic logo
+    Dr. Sheenu's D-Care Dental Clinic logo with a flowing blue and cyan tooth mark.
   </desc>
 
+  <defs>
+    <linearGradient id="toothGradient"
+      x1="70" y1="120"
+      x2="540" y2="610"
+      gradientUnits="userSpaceOnUse">
 
-  <!--
-    Programmed D-Care tooth mark.
-    This is a vector, not a raster image.
-  -->
+      <stop offset="0" stop-color="#11B8D0"/>
+      <stop offset="0.52" stop-color="#079AC8"/>
+      <stop offset="1" stop-color="#0752B7"/>
+    </linearGradient>
 
-  <g
-    fill="none"
-    stroke="#079da0"
-    stroke-width="8"
-    stroke-linecap="round"
-    stroke-linejoin="round"
-  >
+    <linearGradient id="wordGradient"
+      x1="390" y1="130"
+      x2="900" y2="300"
+      gradientUnits="userSpaceOnUse">
+
+      <stop offset="0" stop-color="#079FC8"/>
+      <stop offset="1" stop-color="#0752B7"/>
+    </linearGradient>
+  </defs>
+
+
+  <!-- =========================================================
+       TOOTH MARK
+       ========================================================= -->
+
+  <g transform="translate(20,-5) scale(.50)">
 
     <path
+      fill="url(#toothGradient)"
       d="
-        M77 48
-        C56 35 34 46 31 67
-        C28 89 35 119 50 139
-        C58 150 68 154 75 143
-        C84 129 85 103 96 103
-        C106 103 108 129 117 143
-        C124 154 134 150 142 139
-        C157 119 164 89 161 67
-        C158 46 136 35 115 48
-        C105 54 99 63 96 76
-        C93 63 87 54 77 48
+        M104 86
+        C72 72 42 82 27 108
+        C7 143 17 193 34 244
+        C49 289 77 339 96 389
+        C115 439 122 491 120 541
+        C119 584 111 622 101 652
+        C96 667 99 682 111 689
+        C123 696 139 687 154 675
+        C187 649 210 615 226 577
+        C238 548 244 522 248 494
+
+        C255 517 257 546 255 575
+        C253 603 250 632 254 655
+        C256 673 263 686 275 688
+        C287 690 303 679 319 668
+        C363 638 406 605 445 568
+        C493 522 530 474 558 417
+        C583 365 596 307 597 247
+        C598 190 588 143 561 113
+        C537 87 504 77 467 81
+        C427 85 386 103 347 124
+        C326 136 305 150 286 164
+
+        C321 146 357 133 393 126
+        C431 119 466 122 490 140
+        C516 159 526 193 522 235
+        C517 288 497 339 472 383
+        C443 433 405 478 360 516
+        C330 541 300 562 271 582
+
+        C273 548 272 516 264 485
+        C255 449 238 416 215 391
+        C207 382 199 385 204 397
+        C219 427 229 458 231 489
+        C233 519 226 549 215 578
+        C201 614 180 645 152 666
+        C144 672 138 674 134 670
+        C130 666 132 656 135 644
+        C145 604 151 564 149 522
+        C147 474 138 429 120 382
+        C101 331 74 282 59 234
+        C45 190 39 153 53 128
+        C65 108 84 105 106 114
+
+        C137 126 171 149 207 173
+        C243 197 276 220 309 239
+        C338 255 366 265 396 269
+        C367 261 341 250 314 234
+        C278 213 245 187 211 162
+        C170 132 133 99 104 86
         Z
-      "
-    />
-
-    <path
-      d="
-        M96 76
-        C96 92 95 99 96 112
       "
     />
 
   </g>
 
 
-  <!-- Wordmark -->
+  <!-- =========================================================
+       WORDMARK
+       ========================================================= -->
 
-  <g
-    fill="#61777a"
-    font-family="Arial, Helvetica, sans-serif"
-  >
+  <g transform="translate(350,92)">
 
+    <!-- DR.SHEENU'S -->
     <text
-      x="190"
-      y="58"
-      font-size="16"
-      font-weight="700"
-      letter-spacing="2.4"
-    >
-      DR. SHEENU'S
+      x="0"
+      y="0"
+      fill="#315D78"
+      font-family="Georgia, 'Times New Roman', serif"
+      font-size="34"
+      font-weight="400"
+      letter-spacing="0.5">
+      DR.SHEENU'S
     </text>
 
 
+    <!-- D-Care -->
     <text
-      x="188"
-      y="128"
-      font-size="66"
-      font-weight="700"
-      letter-spacing="-2.2"
-    >
+      x="-8"
+      y="105"
+      fill="url(#wordGradient)"
+      font-family="Arial, Helvetica, sans-serif"
+      font-size="102"
+      font-weight="400"
+      letter-spacing="-4">
       D-Care
     </text>
 
 
+    <!-- DENTAL CLINIC -->
     <text
-      x="191"
+      x="-4"
       y="166"
-      font-size="23"
-      font-weight="700"
-      letter-spacing="2.5"
-    >
+      fill="#0752B7"
+      font-family="Arial, Helvetica, sans-serif"
+      font-size="48"
+      font-weight="400"
+      letter-spacing="0.5">
       DENTAL CLINIC
     </text>
 
