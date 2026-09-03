@@ -1,8 +1,8 @@
-(() => {
+document.addEventListener("DOMContentLoaded", () => {
 
-  /* =========================================================
+  /* =====================================================
      YEAR
-  ========================================================= */
+  ====================================================== */
 
   const year = document.getElementById("year");
 
@@ -11,77 +11,35 @@
   }
 
 
-  /* =========================================================
-     MOBILE MENU
-  ========================================================= */
+  /* =====================================================
+     CINEMATIC INTRO
+  ====================================================== */
 
-  const menuButton = document.querySelector(".menu-toggle");
-  const nav = document.querySelector(".nav-links");
-
-  if (menuButton && nav) {
-
-    menuButton.addEventListener("click", () => {
-
-      const isOpen = nav.classList.toggle("open");
-
-      menuButton.classList.toggle("active", isOpen);
-
-      menuButton.setAttribute(
-        "aria-expanded",
-        isOpen ? "true" : "false"
-      );
-
-    });
+  const intro = document.getElementById("intro");
 
 
-    nav.querySelectorAll("a").forEach(link => {
+  function finishIntro(){
 
-      link.addEventListener("click", () => {
+    if (!intro) return;
 
-        nav.classList.remove("open");
+    intro.classList.add("finished");
 
-        menuButton.classList.remove("active");
+    document.body.classList.remove("loading");
 
-        menuButton.setAttribute(
-          "aria-expanded",
-          "false"
-        );
+    setTimeout(() => {
 
-      });
+      intro.remove();
 
-    });
+    }, 1100);
 
   }
 
 
-  /* =========================================================
-     PREMIUM LOGO INTRO
-  ========================================================= */
-
-  const loader = document.querySelector(".site-loader");
-
-  const finishLoader = () => {
-
-    if (!loader) return;
-
-    loader.classList.add("is-done");
-
-    document.body.classList.remove("is-loading");
-
-    setTimeout(() => {
-
-      loader.remove();
-
-    }, 1200);
-
-  };
-
-
   /*
-    Wait for the page to load.
+    Give the logo enough time to actually reveal.
 
-    The logo animation gets enough time to play,
-    but we don't leave somebody staring at it forever.
+    It doesn't wait forever if the video/network
+    is slow.
   */
 
   window.addEventListener(
@@ -89,142 +47,207 @@
     () => {
 
       setTimeout(
-        finishLoader,
-        2400
+        finishIntro,
+        2500
       );
 
     },
-    { once:true }
+    {
+      once:true
+    }
   );
 
 
   /*
-    Safety fallback for slower devices.
+    Absolute fallback.
   */
 
   setTimeout(
-    finishLoader,
+    finishIntro,
     4500
   );
 
 
-  /* =========================================================
-     SCROLL REVEAL
-  ========================================================= */
+  /* =====================================================
+     MOBILE NAVIGATION
+  ====================================================== */
 
-  const revealItems =
-    document.querySelectorAll("[data-reveal]");
+  const menuButton =
+    document.querySelector(".menu-button");
 
-  const staggerItems =
-    document.querySelectorAll("[data-stagger]");
+  const navigation =
+    document.querySelector(".navigation");
 
 
   if (
-    "IntersectionObserver" in window &&
-    !window.matchMedia(
-      "(prefers-reduced-motion: reduce)"
-    ).matches
-  ) {
+    menuButton &&
+    navigation
+  ){
 
-    const observer =
-      new IntersectionObserver(
+    menuButton.addEventListener(
+      "click",
+      () => {
 
-        (entries, obs) => {
+        const open =
+          navigation.classList.toggle("open");
 
-          entries.forEach(entry => {
+        menuButton.classList.toggle(
+          "active",
+          open
+        );
 
-            if (entry.isIntersecting) {
+        menuButton.setAttribute(
+          "aria-expanded",
+          open ? "true" : "false"
+        );
 
-              entry.target.classList.add(
-                "is-visible"
-              );
-
-              obs.unobserve(
-                entry.target
-              );
-
-            }
-
-          });
-
-        },
-
-        {
-          threshold:.12,
-
-          rootMargin:
-            "0px 0px -60px 0px"
-        }
-
-      );
+      }
+    );
 
 
-    revealItems.forEach(item => {
+    navigation
+      .querySelectorAll("a")
+      .forEach(link => {
 
-      observer.observe(item);
+        link.addEventListener(
+          "click",
+          () => {
 
-    });
+            navigation.classList.remove(
+              "open"
+            );
 
+            menuButton.classList.remove(
+              "active"
+            );
 
-    staggerItems.forEach(item => {
+            menuButton.setAttribute(
+              "aria-expanded",
+              "false"
+            );
 
-      observer.observe(item);
+          }
+        );
 
-    });
-
-  }
-
-  else {
-
-    revealItems.forEach(item => {
-
-      item.classList.add(
-        "is-visible"
-      );
-
-    });
-
-
-    staggerItems.forEach(item => {
-
-      item.classList.add(
-        "is-visible"
-      );
-
-    });
+      });
 
   }
 
 
-  /* =========================================================
-     HERO VIDEO PARALLAX
-  ========================================================= */
+  /* =====================================================
+     SCROLL REVEALS
+  ====================================================== */
+
+  const revealElements =
+    document.querySelectorAll(
+      "[data-reveal]"
+    );
+
+
+  const staggerElements =
+    document.querySelectorAll(
+      "[data-stagger]"
+    );
+
 
   const reduceMotion =
     window.matchMedia(
       "(prefers-reduced-motion: reduce)"
     ).matches;
 
-  const heroMedia =
-    document.querySelector(".hero-media");
+
+  if (
+    "IntersectionObserver" in window &&
+    !reduceMotion
+  ){
+
+    const observer =
+      new IntersectionObserver(
+        entries => {
+
+          entries.forEach(
+            entry => {
+
+              if (
+                entry.isIntersecting
+              ){
+
+                entry.target.classList.add(
+                  "visible"
+                );
+
+                observer.unobserve(
+                  entry.target
+                );
+
+              }
+
+            }
+          );
+
+        },
+        {
+          threshold:.12,
+
+          rootMargin:
+            "0px 0px -60px 0px"
+        }
+      );
+
+
+    revealElements.forEach(
+      element =>
+        observer.observe(element)
+    );
+
+
+    staggerElements.forEach(
+      element =>
+        observer.observe(element)
+    );
+
+  }
+  else{
+
+    revealElements.forEach(
+      element =>
+        element.classList.add("visible")
+    );
+
+
+    staggerElements.forEach(
+      element =>
+        element.classList.add("visible")
+    );
+
+  }
+
+
+  /* =====================================================
+     HERO VIDEO PARALLAX
+  ====================================================== */
+
+  const heroVideo =
+    document.querySelector(
+      ".hero-video"
+    );
 
 
   if (
-    heroMedia &&
+    heroVideo &&
     !reduceMotion
-  ) {
+  ){
 
     let ticking = false;
 
 
-    const updateParallax = () => {
+    function updateParallax(){
 
       if (
-        window.innerWidth < 900
-      ) {
+        window.innerWidth <= 950
+      ){
 
-        heroMedia.style.transform =
-          "";
+        heroVideo.style.transform = "";
 
         ticking = false;
 
@@ -234,46 +257,49 @@
 
 
       const rect =
-        heroMedia.getBoundingClientRect();
+        heroVideo.getBoundingClientRect();
 
 
       const viewportCenter =
         window.innerHeight / 2;
 
+
       const elementCenter =
-        rect.top + rect.height / 2;
+        rect.top +
+        rect.height / 2;
 
 
       const distance =
-        viewportCenter - elementCenter;
+        viewportCenter -
+        elementCenter;
 
 
-      const shift =
+      const movement =
         Math.max(
-          -12,
+          -10,
           Math.min(
-            12,
+            10,
             distance * .018
           )
         );
 
 
-      heroMedia.style.transform =
-        `translateY(${shift}px)`;
+      heroVideo.style.transform =
+        `translateY(${movement}px)`;
 
 
       ticking = false;
 
-    };
+    }
 
 
     window.addEventListener(
       "scroll",
       () => {
 
-        if (!ticking) {
+        if (!ticking){
 
-          window.requestAnimationFrame(
+          requestAnimationFrame(
             updateParallax
           );
 
@@ -282,93 +308,26 @@
         }
 
       },
-      { passive:true }
+      {
+        passive:true
+      }
     );
 
   }
 
 
-  /* =========================================================
-     SMOOTH ACTIVE NAV FEEL
-  ========================================================= */
-
-  const sections =
-    document.querySelectorAll(
-      "main section[id]"
-    );
-
-  const navLinks =
-    document.querySelectorAll(
-      ".nav-links a[href^='#']"
-    );
-
-
-  if (
-    "IntersectionObserver" in window
-  ) {
-
-    const navObserver =
-      new IntersectionObserver(
-
-        entries => {
-
-          entries.forEach(entry => {
-
-            if (!entry.isIntersecting)
-              return;
-
-
-            navLinks.forEach(link => {
-
-              link.classList.remove(
-                "active-link"
-              );
-
-              if (
-                link.getAttribute("href") ===
-                "#" + entry.target.id
-              ) {
-
-                link.classList.add(
-                  "active-link"
-                );
-
-              }
-
-            });
-
-          });
-
-        },
-
-        {
-          threshold:.35
-        }
-
-      );
-
-
-    sections.forEach(section => {
-
-      navObserver.observe(section);
-
-    });
-
-  }
-
-
-  /* =========================================================
-     MAGNETIC BUTTON FEEL
-  ========================================================= */
+  /* =====================================================
+     BUTTON MAGNETIC FEEL
+  ====================================================== */
 
   if (
     !reduceMotion &&
-    window.innerWidth > 900
-  ) {
+    window.innerWidth > 950
+  ){
 
     document
       .querySelectorAll(
-        ".button.primary, .nav-cta"
+        ".button-primary, .nav-appointment"
       )
       .forEach(button => {
 
@@ -379,10 +338,12 @@
             const rect =
               button.getBoundingClientRect();
 
+
             const x =
               event.clientX -
               rect.left -
               rect.width / 2;
+
 
             const y =
               event.clientY -
@@ -391,7 +352,10 @@
 
 
             button.style.transform =
-              `translate(${x * .08}px, ${y * .08}px)`;
+              `translate(
+                ${x * .07}px,
+                ${y * .07}px
+              )`;
 
           }
         );
@@ -401,8 +365,7 @@
           "mouseleave",
           () => {
 
-            button.style.transform =
-              "";
+            button.style.transform = "";
 
           }
         );
@@ -411,4 +374,5 @@
 
   }
 
-})();
+
+});
