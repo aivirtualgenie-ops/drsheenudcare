@@ -1,44 +1,55 @@
 <svg
   xmlns="http://www.w3.org/2000/svg"
-  viewBox="0 0 760 190"
+  viewBox="0 0 820 210"
   role="img"
   aria-labelledby="title desc"
 >
-  <title id="title">Dr. Sheenu's D-Care Dental Clinic</title>
+
+  <title id="title">
+    Dr. Sheenu's D-Care Dental Clinic
+  </title>
 
   <desc id="desc">
     Dr. Sheenu's D-Care Dental Clinic logo
   </desc>
 
 
-  <!-- Tooth emblem -->
+  <!--
+    Programmed D-Care tooth mark.
+    This is a vector, not a raster image.
+  -->
 
   <g
     fill="none"
     stroke="#079da0"
-    stroke-width="6.5"
+    stroke-width="8"
     stroke-linecap="round"
     stroke-linejoin="round"
   >
 
     <path
       d="
-        M70 38
-        C50 38 35 51 31 69
-        C26 92 35 121 50 138
-        C60 149 71 151 77 137
-        C84 122 85 101 95 101
-        C105 101 106 122 113 137
-        C119 151 130 149 140 138
-        C155 121 164 92 159 69
-        C155 51 140 38 120 38
-        C107 38 99 44 95 54
-        C91 44 83 38 70 38
+        M77 48
+        C56 35 34 46 31 67
+        C28 89 35 119 50 139
+        C58 150 68 154 75 143
+        C84 129 85 103 96 103
+        C106 103 108 129 117 143
+        C124 154 134 150 142 139
+        C157 119 164 89 161 67
+        C158 46 136 35 115 48
+        C105 54 99 63 96 76
+        C93 63 87 54 77 48
         Z
       "
     />
 
-    <path d="M95 55V108"/>
+    <path
+      d="
+        M96 76
+        C96 92 95 99 96 112
+      "
+    />
 
   </g>
 
@@ -47,35 +58,35 @@
 
   <g
     fill="#61777a"
-    font-family="DM Sans, Arial, sans-serif"
+    font-family="Arial, Helvetica, sans-serif"
   >
 
     <text
-      x="180"
-      y="51"
-      font-size="14"
+      x="190"
+      y="58"
+      font-size="16"
       font-weight="700"
-      letter-spacing="2"
+      letter-spacing="2.4"
     >
       DR. SHEENU'S
     </text>
 
 
     <text
-      x="178"
-      y="114"
-      font-size="59"
+      x="188"
+      y="128"
+      font-size="66"
       font-weight="700"
-      letter-spacing="-2.5"
+      letter-spacing="-2.2"
     >
       D-Care
     </text>
 
 
     <text
-      x="181"
-      y="148"
-      font-size="21"
+      x="191"
+      y="166"
+      font-size="23"
       font-weight="700"
       letter-spacing="2.5"
     >
