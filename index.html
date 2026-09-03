@@ -1,720 +1,871 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="description" content="D-Care Dental Clinic by Dr. Sheenu — Family & Cosmetic Dentistry.">
-<title>D-Care Dental Clinic | Dr. Sheenu</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+  <meta
+    name="description"
+    content="Dr. Sheenu's D-Care Dental Clinic — Family & Cosmetic Dentistry in Thattamala, Kollam."
+  >
 
-<link rel="stylesheet" href="style.css">
+  <title>Dr. Sheenu's D-Care Dental Clinic</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap"
+    rel="stylesheet"
+  >
+
+  <link rel="stylesheet" href="style.css">
 </head>
 
-<body class="is-loading">
+<body class="loading">
 
-<!-- =========================================================
-     PREMIUM LOGO INTRO
-========================================================= -->
+  <!-- ======================================================
+       CINEMATIC BRAND INTRO
+  ======================================================= -->
 
-<div class="site-loader" aria-label="D-Care Dental Clinic">
+  <div class="intro" id="intro">
 
-  <div class="loader-noise"></div>
+    <div class="intro-aura"></div>
 
-  <div class="loader-glow glow-one"></div>
-  <div class="loader-glow glow-two"></div>
+    <div class="intro-content">
 
-  <div class="loader-stars">
-    <span></span>
-    <span></span>
-    <span></span>
-    <span></span>
-    <span></span>
-    <span></span>
-    <span></span>
-    <span></span>
-    <span></span>
-    <span></span>
-    <span></span>
-    <span></span>
-  </div>
+      <div class="intro-tooth">
 
-  <div class="loader-content">
+        <svg
+          viewBox="0 0 150 150"
+          aria-hidden="true"
+        >
+          <path
+            d="M75 20
+               C50 20 32 37 27 59
+               C22 84 32 116 49 135
+               C60 147 72 149 79 134
+               C86 119 87 97 95 97
+               C103 97 104 119 111 134
+               C118 149 130 147 141 135
+               C158 116 168 84 163 59
+               C158 37 140 20 115 20
+               C102 20 88 27 81 39
+               C74 27 62 20 49 20Z"
+          />
 
-    <div class="logo-halo"></div>
+          <path d="M75 40V101"/>
+        </svg>
 
-    <img
-      class="loader-logo"
-      src="logo.svg"
-      alt="Dr. Sheenu's D-Care Dental Clinic"
-    >
+      </div>
 
-    <div class="loader-line">
-      <span></span>
+      <div class="intro-name">
+
+        <span>DR. SHEENU'S</span>
+
+        <strong>D-Care</strong>
+
+        <small>DENTAL CLINIC</small>
+
+      </div>
+
+      <div class="intro-line">
+        <i></i>
+      </div>
+
+      <p>TRANSFORMING SMILES</p>
+
     </div>
 
-    <p>TRANSFORMING SMILES</p>
+    <!-- one restrained sparkle -->
+    <div class="intro-spark spark-a"></div>
+    <div class="intro-spark spark-b"></div>
+    <div class="intro-spark spark-c"></div>
 
   </div>
 
-</div>
+
+  <!-- ======================================================
+       TOP BAR
+  ======================================================= -->
+
+  <div class="topbar">
+
+    <span>D-CARE DENTAL CLINIC</span>
+
+    <span>THATTAMALA · KOLLAM</span>
+
+  </div>
 
 
-<!-- =========================================================
-     TOP BAR
-========================================================= -->
+  <!-- ======================================================
+       NAVIGATION
+  ======================================================= -->
 
-<div class="topbar">
-  <span>D-CARE DENTAL CLINIC</span>
-  <span>THATTAMALA · KOLLAM</span>
-</div>
+  <header class="navbar">
 
+    <a href="#home" class="brand">
 
-<!-- =========================================================
-     NAVIGATION
-========================================================= -->
+      <img
+        src="logo.svg"
+        alt="Dr. Sheenu's D-Care Dental Clinic"
+      >
 
-<header class="nav">
-
-  <a class="brand" href="#home">
-    <img src="logo.svg" alt="Dr. Sheenu's D-Care Dental Clinic">
-  </a>
-
-  <button
-    class="menu-toggle"
-    aria-label="Open menu"
-    aria-expanded="false"
-  >
-    <span></span>
-    <span></span>
-  </button>
-
-  <nav class="nav-links">
-
-    <a href="#about">About</a>
-    <a href="#treatments">Treatments</a>
-    <a href="#doctors">Doctors</a>
-    <a href="#clinic">Clinic</a>
-    <a href="#contact">Contact</a>
-
-    <a
-      class="nav-cta"
-      href="https://wa.me/919995215020?text=Hello%20D-Care%20Dental%20Clinic%2C%20I%20would%20like%20to%20book%20an%20appointment."
-      target="_blank"
-      rel="noopener"
-    >
-      Book Appointment
     </a>
 
-  </nav>
 
-</header>
+    <button
+      class="menu-button"
+      type="button"
+      aria-label="Open navigation"
+      aria-expanded="false"
+    >
+
+      <span></span>
+      <span></span>
+
+    </button>
 
 
-<main id="home">
+    <nav class="navigation">
 
+      <a href="#about">About</a>
 
-<!-- =========================================================
-     HERO
-========================================================= -->
+      <a href="#treatments">Treatments</a>
 
-<section class="hero">
+      <a href="#doctors">Doctors</a>
 
-  <div class="hero-copy reveal-hero">
+      <a href="#clinic">Clinic</a>
 
-    <p class="eyebrow">
-      FAMILY & COSMETIC DENTISTRY
-    </p>
-
-    <h1>
-      Transforming
-      <br>
-      <em>Smiles.</em>
-    </h1>
-
-    <p class="hero-text">
-      Personalized dental care for healthier smiles,
-      confident transformations and beautiful results.
-    </p>
-
-    <div class="actions">
+      <a href="#contact">Contact</a>
 
       <a
-        class="button primary"
+        class="nav-appointment"
         href="https://wa.me/919995215020?text=Hello%20D-Care%20Dental%20Clinic%2C%20I%20would%20like%20to%20book%20an%20appointment."
         target="_blank"
         rel="noopener"
       >
-        Book an Appointment
-        <span>↗</span>
+        Book Appointment
       </a>
 
-      <a
-        class="button ghost"
-        href="tel:+919995215020"
-      >
-        Call 99952 15020
-      </a>
+    </nav>
+
+  </header>
+
+
+  <main>
+
+
+    <!-- ==================================================
+         HERO
+    =================================================== -->
+
+    <section class="hero" id="home">
+
+      <div class="hero-content reveal">
+
+        <div class="eyebrow">
+          FAMILY & COSMETIC DENTISTRY
+        </div>
+
+
+        <h1>
+          <span>Transforming</span>
+          <em>Smiles.</em>
+        </h1>
+
+
+        <p class="hero-description">
+          Personalized dental care for healthier smiles,
+          confident transformations and beautiful results.
+        </p>
+
+
+        <div class="hero-actions">
+
+          <a
+            class="button button-primary"
+            href="https://wa.me/919995215020?text=Hello%20D-Care%20Dental%20Clinic%2C%20I%20would%20like%20to%20book%20an%20appointment."
+            target="_blank"
+            rel="noopener"
+          >
+            Book an Appointment
+            <span>↗</span>
+          </a>
+
+
+          <a
+            class="button button-outline"
+            href="tel:+919995215020"
+          >
+            Call 99952 15020
+          </a>
+
+        </div>
+
+
+        <div class="hero-note">
+
+          <span></span>
+
+          Specialist dental care under one roof
+
+        </div>
+
+      </div>
+
+
+      <div class="hero-video reveal">
+
+        <video
+          autoplay
+          muted
+          loop
+          playsinline
+          preload="metadata"
+          poster="clinic-video-poster.jpg"
+        >
+          <source
+            src="clinic-video.mp4"
+            type="video/mp4"
+          >
+        </video>
+
+        <div class="video-overlay"></div>
+
+
+        <div class="video-caption">
+
+          <small>INSIDE D-CARE</small>
+
+          <strong>
+            Care. Expertise. Confidence.
+          </strong>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- ==================================================
+         TICKER
+    =================================================== -->
+
+    <div class="ticker">
+
+      <div>SMILE DESIGN</div>
+      <span>✦</span>
+
+      <div>VENEERS</div>
+      <span>✦</span>
+
+      <div>ALIGNERS</div>
+      <span>✦</span>
+
+      <div>IMPLANTS</div>
+      <span>✦</span>
+
+      <div>ROOT CANAL</div>
+      <span>✦</span>
+
+      <div>WHITENING</div>
 
     </div>
 
-    <p class="hero-note">
-      <i></i>
-      Specialist dental care under one roof
-    </p>
 
-  </div>
+    <!-- ==================================================
+         ABOUT
+    =================================================== -->
 
-
-  <div class="hero-media reveal-hero">
-
-    <video
-      autoplay
-      muted
-      loop
-      playsinline
-      preload="metadata"
-      poster="clinic-video-poster.jpg"
+    <section
+      class="section about"
+      id="about"
+      data-reveal
     >
-      <source src="clinic-video.mp4" type="video/mp4">
-    </video>
 
-    <div class="video-shade"></div>
-
-    <div class="media-label">
-      <small>REAL D-CARE</small>
-      <strong>Care. Expertise. Confidence.</strong>
-    </div>
-
-  </div>
-
-</section>
+      <div class="section-label">
+        ABOUT D-CARE
+      </div>
 
 
-<!-- =========================================================
-     MOVING TICKER
-========================================================= -->
+      <div class="about-grid">
 
-<section class="ticker">
-
-  <span>SMILE DESIGN</span>
-  <b>✦</b>
-
-  <span>VENEERS</span>
-  <b>✦</b>
-
-  <span>ALIGNERS</span>
-  <b>✦</b>
-
-  <span>IMPLANTS</span>
-  <b>✦</b>
-
-  <span>ROOT CANAL</span>
-  <b>✦</b>
-
-  <span>WHITENING</span>
-
-</section>
+        <h2>
+          Dental care with a focus on
+          <em>your smile.</em>
+        </h2>
 
 
-<!-- =========================================================
-     ABOUT
-========================================================= -->
+        <div class="section-copy">
 
-<section class="section" id="about" data-reveal>
+          <p>
+            D-Care Dental Clinic is a family and cosmetic
+            dental clinic focused on transforming smiles
+            through personalized dental care and specialist
+            treatment.
+          </p>
 
-  <p class="kicker">ABOUT D-CARE</p>
+          <p>
+            From everyday dental needs to smile-focused
+            treatments, D-Care brings different areas of
+            dentistry together for a complete patient
+            experience.
+          </p>
 
-  <div class="two-col">
+        </div>
 
-    <h2>
-      Dental care with a focus on
-      <em>your smile.</em>
-    </h2>
+      </div>
 
-    <div class="copy">
-
-      <p>
-        D-Care Dental Clinic is a family and cosmetic dental
-        clinic focused on transforming smiles through
-        personalized dental care and specialist treatment.
-      </p>
-
-      <p>
-        From everyday dental needs to smile-focused
-        treatments, D-Care brings different areas of
-        dentistry together for a more complete patient
-        experience.
-      </p>
-
-    </div>
-
-  </div>
-
-</section>
+    </section>
 
 
-<!-- =========================================================
-     TREATMENTS
-========================================================= -->
+    <!-- ==================================================
+         TREATMENTS
+    =================================================== -->
 
-<section class="section light" id="treatments" data-reveal>
+    <section
+      class="section treatments"
+      id="treatments"
+      data-reveal
+    >
 
-  <div class="section-head">
+      <div class="section-heading">
 
-    <div>
-      <p class="kicker">TREATMENTS</p>
+        <div>
+
+          <div class="section-label">
+            TREATMENTS
+          </div>
+
+          <h2>
+            Complete care.
+            <br>
+            <em>Beautifully planned.</em>
+          </h2>
+
+        </div>
+
+
+        <p>
+          Smile-focused and essential dental treatments
+          available through the D-Care team.
+        </p>
+
+      </div>
+
+
+      <div
+        class="treatment-grid"
+        data-stagger
+      >
+
+        <article>
+          <span class="treatment-symbol">✦</span>
+          <h3>Smile Design</h3>
+          <p>
+            Smile-focused treatment planning designed
+            around your goals.
+          </p>
+        </article>
+
+
+        <article>
+          <span class="treatment-symbol">✦</span>
+          <h3>Veneers</h3>
+          <p>
+            Cosmetic options for improving the appearance
+            of selected teeth and smiles.
+          </p>
+        </article>
+
+
+        <article>
+          <span class="treatment-symbol">✦</span>
+          <h3>Clear Aligners</h3>
+          <p>
+            A discreet approach to correcting tooth
+            alignment with clear removable aligners.
+          </p>
+        </article>
+
+
+        <article>
+          <span class="treatment-symbol">✦</span>
+          <h3>Dental Implants</h3>
+          <p>
+            Specialist-led tooth replacement planning
+            for suitable patients.
+          </p>
+        </article>
+
+
+        <article>
+          <span class="treatment-symbol">✦</span>
+          <h3>Root Canal</h3>
+          <p>
+            Care for teeth affected by infection or
+            inflammation of the dental pulp.
+          </p>
+        </article>
+
+
+        <article>
+          <span class="treatment-symbol">✦</span>
+          <h3>Whitening</h3>
+          <p>
+            Smile-brightening treatment for patients
+            looking to improve tooth colour.
+          </p>
+        </article>
+
+
+        <article>
+          <span class="treatment-symbol">✦</span>
+          <h3>Periodontics</h3>
+          <p>
+            Specialist care for gums and the tissues
+            supporting your teeth.
+          </p>
+        </article>
+
+
+        <article>
+          <span class="treatment-symbol">✦</span>
+          <h3>Oral & Maxillofacial Surgery</h3>
+          <p>
+            Specialist surgical dental care for
+            appropriate conditions.
+          </p>
+        </article>
+
+
+        <article>
+          <span class="treatment-symbol">✦</span>
+          <h3>Children's Dentistry</h3>
+          <p>
+            Dental care for children with a positive,
+            comfortable experience.
+          </p>
+        </article>
+
+      </div>
+
+    </section>
+
+
+    <!-- ==================================================
+         DR SHEENU
+    =================================================== -->
+
+    <section
+      class="doctor-feature"
+      data-reveal
+    >
+
+      <div class="doctor-information">
+
+        <div class="section-label">
+          LEADERSHIP
+        </div>
+
+        <div class="doctor-role">
+          CHIEF DENTAL SURGEON
+        </div>
+
+
+        <h2>
+          Dr. Sheenu A
+        </h2>
+
+
+        <div class="doctor-degree">
+          BDS
+        </div>
+
+
+        <p>
+          Leading D-Care Dental Clinic with a focus on
+          family and cosmetic dentistry and the
+          transformation of healthy, confident smiles.
+        </p>
+
+      </div>
+
+
+      <div class="doctor-portrait">
+
+        <div class="portrait-placeholder">
+
+          <span>DR. SHEENU</span>
+
+          <small>
+            Doctor portrait
+          </small>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- ==================================================
+         DOCTORS
+    =================================================== -->
+
+    <section
+      class="section doctors"
+      id="doctors"
+      data-reveal
+    >
+
+      <div class="section-heading">
+
+        <div>
+
+          <div class="section-label">
+            SPECIALIST TEAM
+          </div>
+
+          <h2>
+            Our dental
+            <br>
+            <em>specialists.</em>
+          </h2>
+
+        </div>
+
+
+        <p>
+          A multidisciplinary dental team bringing
+          different areas of dentistry together.
+        </p>
+
+      </div>
+
+
+      <div
+        class="doctor-grid"
+        data-stagger
+      >
+
+        <article>
+          <span class="doctor-accent"></span>
+          <h3>Dr. Sheenu A</h3>
+          <p>BDS · Chief Dental Surgeon</p>
+        </article>
+
+
+        <article>
+          <span class="doctor-accent"></span>
+          <h3>Dr. Subin Samson</h3>
+          <p>MDS · Orthodontist</p>
+        </article>
+
+
+        <article>
+          <span class="doctor-accent"></span>
+          <h3>Dr. Sreenath I. R.</h3>
+          <p>MDS</p>
+        </article>
+
+
+        <article>
+          <span class="doctor-accent"></span>
+          <h3>Dr. Maneesh M. Nair</h3>
+          <p>MDS</p>
+        </article>
+
+
+        <article>
+          <span class="doctor-accent"></span>
+          <h3>Dr. Rasila Sajnu</h3>
+          <p>MDS</p>
+        </article>
+
+
+        <article>
+          <span class="doctor-accent"></span>
+          <h3>Dr. Aravind</h3>
+          <p>MDS · Periodontist</p>
+        </article>
+
+
+        <article>
+          <span class="doctor-accent"></span>
+          <h3>Dr. Diljith Rishi</h3>
+          <p>
+            MDS · Oral & Maxillofacial Surgeon
+          </p>
+        </article>
+
+
+        <article>
+          <span class="doctor-accent"></span>
+          <h3>Dr. Arun Mohan</h3>
+          <p>BDS</p>
+        </article>
+
+      </div>
+
+    </section>
+
+
+    <!-- ==================================================
+         CLINIC VIDEO
+    =================================================== -->
+
+    <section
+      class="clinic-section"
+      id="clinic"
+      data-reveal
+    >
+
+      <div class="clinic-heading">
+
+        <div class="section-label">
+          INSIDE D-CARE
+        </div>
+
+        <h2>
+          Real clinic.
+          <br>
+          <em>Real care.</em>
+        </h2>
+
+      </div>
+
+
+      <div class="clinic-video">
+
+        <video
+          controls
+          playsinline
+          preload="metadata"
+          poster="clinic-video-poster.jpg"
+        >
+          <source
+            src="clinic-video.mp4"
+            type="video/mp4"
+          >
+        </video>
+
+      </div>
+
+    </section>
+
+
+    <!-- ==================================================
+         SMILE FOCUS
+    =================================================== -->
+
+    <section
+      class="section smile-section"
+      data-reveal
+    >
+
+      <div class="section-label">
+        SMILE FOCUS
+      </div>
 
       <h2>
-        Complete care.
+        Designed for
         <br>
-        <em>Beautifully planned.</em>
+        <em>confident smiles.</em>
       </h2>
-    </div>
-
-    <p>
-      Smile-focused and essential dental treatments
-      represented by D-Care.
-    </p>
-
-  </div>
 
 
-  <div class="treatment-grid" data-stagger>
+      <div
+        class="smile-grid"
+        data-stagger
+      >
 
-    <article>
-      <div class="card-icon">✦</div>
-      <h3>Smile Design</h3>
-      <p>
-        Smile-focused treatment planning designed around
-        your goals.
-      </p>
-    </article>
+        <div class="smile-card">
+          <span>SMILE DESIGN</span>
+        </div>
 
-    <article>
-      <div class="card-icon">✦</div>
-      <h3>Veneers</h3>
-      <p>
-        Cosmetic options for improving the appearance
-        of selected teeth and smiles.
-      </p>
-    </article>
+        <div class="smile-card">
+          <span>ALIGNERS</span>
+        </div>
 
-    <article>
-      <div class="card-icon">✦</div>
-      <h3>Clear Aligners</h3>
-      <p>
-        A discreet approach to correcting tooth alignment
-        with clear removable aligners.
-      </p>
-    </article>
+        <div class="smile-card">
+          <span>WHITENING</span>
+        </div>
 
-    <article>
-      <div class="card-icon">✦</div>
-      <h3>Dental Implants</h3>
-      <p>
-        Specialist-led tooth replacement planning for
-        suitable patients.
-      </p>
-    </article>
+      </div>
 
-    <article>
-      <div class="card-icon">✦</div>
-      <h3>Root Canal</h3>
-      <p>
-        Care for teeth affected by infection or
-        inflammation of the dental pulp.
-      </p>
-    </article>
-
-    <article>
-      <div class="card-icon">✦</div>
-      <h3>Whitening</h3>
-      <p>
-        Smile-brightening treatment for patients looking
-        to improve tooth colour.
-      </p>
-    </article>
-
-    <article>
-      <div class="card-icon">✦</div>
-      <h3>Periodontics</h3>
-      <p>
-        Specialist care for gums and the tissues
-        supporting your teeth.
-      </p>
-    </article>
-
-    <article>
-      <div class="card-icon">✦</div>
-      <h3>Oral & Maxillofacial Surgery</h3>
-      <p>
-        Specialist surgical dental care for appropriate
-        conditions.
-      </p>
-    </article>
-
-    <article>
-      <div class="card-icon">✦</div>
-      <h3>Children's Dentistry</h3>
-      <p>
-        Dental care for children with a positive,
-        comfortable experience.
-      </p>
-    </article>
-
-  </div>
-
-</section>
+    </section>
 
 
-<!-- =========================================================
-     DR SHEENU
-========================================================= -->
+    <!-- ==================================================
+         CTA
+    =================================================== -->
 
-<section class="doctor-feature" data-reveal>
+    <section
+      class="cta"
+      data-reveal
+    >
 
-  <div class="doctor-copy">
-
-    <p class="kicker">LEADERSHIP</p>
-
-    <p class="eyebrow">
-      CHIEF DENTAL SURGEON
-    </p>
-
-    <h2>
-      Dr. Sheenu A
-    </h2>
-
-    <strong>BDS</strong>
-
-    <p class="doctor-description">
-      Leading D-Care Dental Clinic with a focus on family
-      and cosmetic dentistry and the transformation of
-      healthy, confident smiles.
-    </p>
-
-  </div>
-
-
-  <div class="portrait">
-
-    <div class="portrait-inner">
-      <span>DR. SHEENU</span>
-      <small>
-        Approved doctor portrait can be added here
-      </small>
-    </div>
-
-  </div>
-
-</section>
-
-
-<!-- =========================================================
-     SPECIALIST TEAM
-========================================================= -->
-
-<section class="section" id="doctors" data-reveal>
-
-  <div class="section-head">
-
-    <div>
-
-      <p class="kicker">SPECIALIST TEAM</p>
+      <div class="section-label">
+        YOUR NEXT VISIT
+      </div>
 
       <h2>
-        Our dental
+        Ready to transform
         <br>
-        <em>specialists.</em>
+        <em>your smile?</em>
       </h2>
 
-    </div>
+      <p>
+        Contact D-Care Dental Clinic to discuss your
+        dental needs and arrange an appointment.
+      </p>
+
+
+      <div class="hero-actions">
+
+        <a
+          class="button button-light"
+          href="https://wa.me/919995215020?text=Hello%20D-Care%20Dental%20Clinic%2C%20I%20would%20like%20to%20book%20an%20appointment."
+          target="_blank"
+          rel="noopener"
+        >
+          WhatsApp D-Care
+          <span>↗</span>
+        </a>
+
+
+        <a
+          class="button button-dark-outline"
+          href="tel:+919995215020"
+        >
+          Call the Clinic
+        </a>
+
+      </div>
+
+    </section>
+
+
+    <!-- ==================================================
+         CONTACT
+    =================================================== -->
+
+    <section
+      class="section contact"
+      id="contact"
+      data-reveal
+    >
+
+      <div>
+
+        <div class="section-label">
+          CONTACT
+        </div>
+
+        <h2>
+          Visit
+          <br>
+          <em>D-Care.</em>
+        </h2>
+
+      </div>
+
+
+      <div class="contact-details">
+
+        <div>
+          <small>PHONE</small>
+
+          <a href="tel:+919995215020">
+            99952 15020
+          </a>
+
+          <a href="tel:+919562215020">
+            95622 15020
+          </a>
+        </div>
+
+
+        <div>
+          <small>LOCATION</small>
+
+          <p>
+            Thattamala, Kollam, Kerala
+          </p>
+        </div>
+
+
+        <div>
+          <small>INSTAGRAM</small>
+
+          <a
+            href="https://www.instagram.com/dr_sheenus_dcare/"
+            target="_blank"
+            rel="noopener"
+          >
+            @dr_sheenus_dcare
+          </a>
+        </div>
+
+
+        <a
+          class="directions"
+          href="https://www.google.com/maps/search/?api=1&query=D-Care%20Dental%20Clinic%20Thattamala%20Kollam"
+          target="_blank"
+          rel="noopener"
+        >
+          Get Directions ↗
+        </a>
+
+      </div>
+
+    </section>
+
+  </main>
+
+
+  <!-- ======================================================
+       FOOTER
+  ======================================================= -->
+
+  <footer>
+
+    <img
+      src="logo.svg"
+      alt="D-Care Dental Clinic"
+    >
 
     <p>
-      A multidisciplinary dental team bringing
-      different areas of dentistry together.
+      Transforming Smiles · Family & Cosmetic Dentistry
     </p>
 
-  </div>
-
-
-  <div class="doctor-grid" data-stagger>
-
-    <article>
-      <span class="doctor-dot"></span>
-      <h3>Dr. Sheenu A</h3>
-      <p>BDS · Chief Dental Surgeon</p>
-    </article>
-
-    <article>
-      <span class="doctor-dot"></span>
-      <h3>Dr. Subin Samson</h3>
-      <p>MDS · Orthodontist</p>
-    </article>
-
-    <article>
-      <span class="doctor-dot"></span>
-      <h3>Dr. Sreenath I. R.</h3>
-      <p>MDS</p>
-    </article>
-
-    <article>
-      <span class="doctor-dot"></span>
-      <h3>Dr. Maneesh M. Nair</h3>
-      <p>MDS</p>
-    </article>
-
-    <article>
-      <span class="doctor-dot"></span>
-      <h3>Dr. Rasila Sajnu</h3>
-      <p>MDS</p>
-    </article>
-
-    <article>
-      <span class="doctor-dot"></span>
-      <h3>Dr. Aravind</h3>
-      <p>MDS · Periodontist</p>
-    </article>
-
-    <article>
-      <span class="doctor-dot"></span>
-      <h3>Dr. Diljith Rishi</h3>
-      <p>MDS · Oral & Maxillofacial Surgeon</p>
-    </article>
-
-    <article>
-      <span class="doctor-dot"></span>
-      <h3>Dr. Arun Mohan</h3>
-      <p>BDS</p>
-    </article>
-
-  </div>
-
-</section>
-
-
-<!-- =========================================================
-     CLINIC VIDEO
-========================================================= -->
-
-<section class="video-section" id="clinic" data-reveal>
-
-  <div class="video-heading">
-
-    <p class="kicker">INSIDE D-CARE</p>
-
-    <h2>
-      Real clinic.
-      <br>
-      <em>Real care.</em>
-    </h2>
-
-  </div>
-
-
-  <div class="wide-video">
-
-    <video
-      controls
-      playsinline
-      preload="metadata"
-      poster="clinic-video-poster.jpg"
-    >
-      <source src="clinic-video.mp4" type="video/mp4">
-    </video>
-
-  </div>
-
-</section>
-
-
-<!-- =========================================================
-     SMILE FOCUS
-========================================================= -->
-
-<section class="section light" data-reveal>
-
-  <p class="kicker">SMILE FOCUS</p>
-
-  <h2>
-    Designed for
-    <br>
-    <em>confident smiles.</em>
-  </h2>
-
-
-  <div class="gallery" data-stagger>
-
     <div>
-      <span>SMILE DESIGN</span>
+      © <span id="year"></span>
+      D-Care Dental Clinic · Thattamala, Kollam
     </div>
 
-    <div>
-      <span>ALIGNERS</span>
-    </div>
-
-    <div>
-      <span>WHITENING</span>
-    </div>
-
-  </div>
-
-</section>
+  </footer>
 
 
-<!-- =========================================================
-     CTA
-========================================================= -->
+  <!-- ======================================================
+       WHATSAPP
+  ======================================================= -->
 
-<section class="cta" data-reveal>
-
-  <p class="kicker">YOUR NEXT VISIT</p>
-
-  <h2>
-    Ready to transform
-    <br>
-    <em>your smile?</em>
-  </h2>
-
-  <p>
-    Contact D-Care Dental Clinic to discuss your
-    dental needs and arrange an appointment.
-  </p>
-
-
-  <div class="actions">
-
-    <a
-      class="button light-button"
-      href="https://wa.me/919995215020?text=Hello%20D-Care%20Dental%20Clinic%2C%20I%20would%20like%20to%20book%20an%20appointment."
-      target="_blank"
-      rel="noopener"
-    >
-      WhatsApp D-Care
-      <span>↗</span>
-    </a>
-
-    <a
-      class="button outline"
-      href="tel:+919995215020"
-    >
-      Call the Clinic
-    </a>
-
-  </div>
-
-</section>
-
-
-<!-- =========================================================
-     CONTACT
-========================================================= -->
-
-<section class="section contact" id="contact" data-reveal>
-
-  <div>
-
-    <p class="kicker">CONTACT</p>
-
-    <h2>
-      Visit
-      <br>
-      <em>D-Care.</em>
-    </h2>
-
-  </div>
-
-
-  <div class="contact-details">
-
-    <div>
-      <small>PHONE</small>
-      <a href="tel:+919995215020">
-        99952 15020
-      </a>
-      <a href="tel:+919562215020">
-        95622 15020
-      </a>
-    </div>
-
-
-    <div>
-      <small>LOCATION</small>
-      <p>
-        Thattamala, Kollam, Kerala
-      </p>
-    </div>
-
-
-    <div>
-      <small>INSTAGRAM</small>
-      <a
-        href="https://www.instagram.com/dr_sheenus_dcare/"
-        target="_blank"
-        rel="noopener"
-      >
-        @dr_sheenus_dcare
-      </a>
-    </div>
-
-
-    <a
-      class="directions"
-      href="https://www.google.com/maps/search/?api=1&query=D-Care%20Dental%20Clinic%20Thattamala%20Kollam"
-      target="_blank"
-      rel="noopener"
-    >
-      Get Directions
-      <span>↗</span>
-    </a>
-
-  </div>
-
-</section>
-
-</main>
-
-
-<!-- =========================================================
-     FOOTER
-========================================================= -->
-
-<footer>
-
-  <img
-    src="logo.svg"
-    alt="D-Care Dental Clinic"
+  <a
+    class="whatsapp"
+    href="https://wa.me/919995215020?text=Hello%20D-Care%20Dental%20Clinic%2C%20I%20would%20like%20to%20book%20an%20appointment."
+    target="_blank"
+    rel="noopener"
+    aria-label="WhatsApp D-Care Dental Clinic"
   >
-
-  <p>
-    Transforming Smiles · Family & Cosmetic Dentistry
-  </p>
-
-  <div>
-    © <span id="year"></span>
-    D-Care Dental Clinic · Thattamala, Kollam
-  </div>
-
-</footer>
+    WA
+  </a>
 
 
-<!-- FLOATING WHATSAPP -->
-
-<a
-  class="wa"
-  href="https://wa.me/919995215020?text=Hello%20D-Care%20Dental%20Clinic%2C%20I%20would%20like%20to%20book%20an%20appointment."
-  target="_blank"
-  rel="noopener"
-  aria-label="WhatsApp D-Care Dental Clinic"
->
-  <span>WA</span>
-</a>
-
-
-<script src="script.js"></script>
+  <script src="script.js"></script>
 
 </body>
 </html>
