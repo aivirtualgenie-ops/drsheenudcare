@@ -1,40 +1,80 @@
-<svg xmlns="http://www.w3.org/2000/svg"
-     viewBox="0 0 1050 420"
-     role="img"
-     aria-labelledby="title desc">
+<svg
+  xmlns="http://www.w3.org/2000/svg"
+  viewBox="0 0 1050 420"
+  role="img"
+  aria-labelledby="title desc"
+>
 
-  <title id="title">Dr. Sheenu's D-Care Dental Clinic</title>
+  <title id="title">
+    Dr. Sheenu's D-Care Dental Clinic
+  </title>
+
   <desc id="desc">
-    Dr. Sheenu's D-Care Dental Clinic logo with a flowing blue and cyan tooth mark.
+    Dr. Sheenu's D-Care Dental Clinic logo with a
+    flowing blue and cyan tooth mark.
   </desc>
 
+
   <defs>
-    <linearGradient id="toothGradient"
-      x1="70" y1="120"
-      x2="540" y2="610"
-      gradientUnits="userSpaceOnUse">
 
-      <stop offset="0" stop-color="#11B8D0"/>
-      <stop offset="0.52" stop-color="#079AC8"/>
-      <stop offset="1" stop-color="#0752B7"/>
+    <linearGradient
+      id="toothGradient"
+      x1="70"
+      y1="120"
+      x2="540"
+      y2="610"
+      gradientUnits="userSpaceOnUse"
+    >
+
+      <stop
+        offset="0"
+        stop-color="#11B8D0"
+      />
+
+      <stop
+        offset=".52"
+        stop-color="#079AC8"
+      />
+
+      <stop
+        offset="1"
+        stop-color="#0752B7"
+      />
+
     </linearGradient>
 
-    <linearGradient id="wordGradient"
-      x1="390" y1="130"
-      x2="900" y2="300"
-      gradientUnits="userSpaceOnUse">
 
-      <stop offset="0" stop-color="#079FC8"/>
-      <stop offset="1" stop-color="#0752B7"/>
+    <linearGradient
+      id="wordGradient"
+      x1="390"
+      y1="130"
+      x2="900"
+      y2="300"
+      gradientUnits="userSpaceOnUse"
+    >
+
+      <stop
+        offset="0"
+        stop-color="#079FC8"
+      />
+
+      <stop
+        offset="1"
+        stop-color="#0752B7"
+      />
+
     </linearGradient>
+
   </defs>
 
 
-  <!-- =========================================================
+  <!-- =====================================================
        TOOTH MARK
-       ========================================================= -->
+       ===================================================== -->
 
-  <g transform="translate(20,-5) scale(.50)">
+  <g
+    transform="translate(20,-5) scale(.50)"
+  >
 
     <path
       fill="url(#toothGradient)"
@@ -96,13 +136,14 @@
   </g>
 
 
-  <!-- =========================================================
+  <!-- =====================================================
        WORDMARK
-       ========================================================= -->
+       ===================================================== -->
 
-  <g transform="translate(350,92)">
+  <g
+    transform="translate(350,92)"
+  >
 
-    <!-- DR.SHEENU'S -->
     <text
       x="0"
       y="0"
@@ -110,12 +151,12 @@
       font-family="Georgia, 'Times New Roman', serif"
       font-size="34"
       font-weight="400"
-      letter-spacing="0.5">
+      letter-spacing=".5"
+    >
       DR.SHEENU'S
     </text>
 
 
-    <!-- D-Care -->
     <text
       x="-8"
       y="105"
@@ -123,12 +164,12 @@
       font-family="Arial, Helvetica, sans-serif"
       font-size="102"
       font-weight="400"
-      letter-spacing="-4">
+      letter-spacing="-4"
+    >
       D-Care
     </text>
 
 
-    <!-- DENTAL CLINIC -->
     <text
       x="-4"
       y="166"
@@ -136,7 +177,8 @@
       font-family="Arial, Helvetica, sans-serif"
       font-size="48"
       font-weight="400"
-      letter-spacing="0.5">
+      letter-spacing=".5"
+    >
       DENTAL CLINIC
     </text>
 
