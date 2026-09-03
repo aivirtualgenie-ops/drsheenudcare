@@ -1,143 +1,91 @@
 document.addEventListener("DOMContentLoaded", () => {
 
-  /* =====================================================
-     YEAR
-  ====================================================== */
-
-  const year =
-    document.getElementById("year");
-
-  if(year){
-
-    year.textContent =
-      new Date().getFullYear();
-
-  }
-
-
-  /* =====================================================
-     CINEMATIC INTRO
-  ====================================================== */
+  const body = document.body;
 
   const intro =
     document.getElementById("intro");
 
+  const menuButton =
+    document.querySelector(".menu-button");
 
-  let introFinished = false;
+  const navigation =
+    document.querySelector(".navigation");
 
 
-  function finishIntro(){
+  /* =====================================================
+     INTRO
+     ===================================================== */
 
-    if(
-      !intro ||
-      introFinished
-    ){
+  const finishIntro = () => {
+
+    if (!intro) {
+
+      body.classList.remove("loading");
+
       return;
+
     }
 
+    intro.classList.add("finished");
 
-    introFinished = true;
+    body.classList.remove("loading");
+
+    setTimeout(() => {
+
+      intro.style.display = "none";
+
+    }, 1200);
+
+  };
 
 
-    intro.classList.add(
-      "finished"
-    );
+  if (intro) {
 
+    if (
+      window.matchMedia(
+        "(prefers-reduced-motion: reduce)"
+      ).matches
+    ) {
 
-    document.body.classList.remove(
-      "loading"
-    );
+      finishIntro();
 
+    } else {
 
-    setTimeout(
-      () => {
+      setTimeout(
+        finishIntro,
+        3000
+      );
 
-        if(intro){
+    }
 
-          intro.remove();
+  } else {
 
-        }
-
-      },
-      1100
-    );
+    body.classList.remove("loading");
 
   }
 
 
-  /*
-    Wait until the page has loaded,
-    then allow the logo reveal to finish.
-  */
-
-  window.addEventListener(
-    "load",
-    () => {
-
-      setTimeout(
-        finishIntro,
-        2450
-      );
-
-    },
-    {
-      once:true
-    }
-  );
-
-
-  /*
-    Safety fallback for slow connections.
-  */
-
-  setTimeout(
-    finishIntro,
-    4300
-  );
-
-
   /* =====================================================
-     MOBILE NAVIGATION
-  ====================================================== */
+     MOBILE MENU
+     ===================================================== */
 
-  const menuButton =
-    document.querySelector(
-      ".menu-button"
-    );
-
-
-  const navigation =
-    document.querySelector(
-      ".navigation"
-    );
-
-
-  if(
-    menuButton &&
-    navigation
-  ){
+  if (menuButton && navigation) {
 
     menuButton.addEventListener(
       "click",
       () => {
 
         const isOpen =
-          navigation.classList.toggle(
-            "open"
-          );
-
+          navigation.classList.toggle("open");
 
         menuButton.classList.toggle(
           "active",
           isOpen
         );
 
-
         menuButton.setAttribute(
           "aria-expanded",
-          isOpen
-            ? "true"
-            : "false"
+          isOpen ? "true" : "false"
         );
 
       }
@@ -146,92 +94,70 @@ document.addEventListener("DOMContentLoaded", () => {
 
     navigation
       .querySelectorAll("a")
-      .forEach(
-        link => {
+      .forEach(link => {
 
-          link.addEventListener(
-            "click",
-            () => {
+        link.addEventListener(
+          "click",
+          () => {
 
-              navigation.classList.remove(
-                "open"
-              );
+            navigation.classList.remove(
+              "open"
+            );
 
+            menuButton.classList.remove(
+              "active"
+            );
 
-              menuButton.classList.remove(
-                "active"
-              );
+            menuButton.setAttribute(
+              "aria-expanded",
+              "false"
+            );
 
+          }
+        );
 
-              menuButton.setAttribute(
-                "aria-expanded",
-                "false"
-              );
-
-            }
-          );
-
-        }
-      );
+      });
 
   }
 
 
   /* =====================================================
-     SCROLL REVEALS
-  ====================================================== */
+     SCROLL REVEAL
+     ===================================================== */
 
   const revealElements =
     document.querySelectorAll(
-      "[data-reveal]"
+      "[data-reveal], [data-stagger]"
     );
 
 
-  const staggerElements =
-    document.querySelectorAll(
-      "[data-stagger]"
-    );
-
-
-  const reduceMotion =
-    window.matchMedia(
-      "(prefers-reduced-motion: reduce)"
-    ).matches;
-
-
-  if(
-    "IntersectionObserver" in window &&
-    !reduceMotion
-  ){
+  if (
+    "IntersectionObserver" in window
+  ) {
 
     const observer =
       new IntersectionObserver(
         entries => {
 
-          entries.forEach(
-            entry => {
+          entries.forEach(entry => {
 
-              if(
-                entry.isIntersecting
-              ){
-
-                entry.target.classList.add(
-                  "visible"
-                );
-
-
-                observer.unobserve(
-                  entry.target
-                );
-
-              }
-
+            if (!entry.isIntersecting) {
+              return;
             }
-          );
+
+            entry.target.classList.add(
+              "visible"
+            );
+
+            observer.unobserve(
+              entry.target
+            );
+
+          });
 
         },
         {
-          threshold:.12,
+          threshold: 0.12,
 
           rootMargin:
             "0px 0px -60px 0px"
@@ -240,206 +166,225 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
     revealElements.forEach(
-      element => {
-
-        observer.observe(
-          element
-        );
-
-      }
+      element => observer.observe(element)
     );
 
-
-    staggerElements.forEach(
-      element => {
-
-        observer.observe(
-          element
-        );
-
-      }
-    );
-
-  }
-  else{
+  } else {
 
     revealElements.forEach(
-      element => {
-
-        element.classList.add(
-          "visible"
-        );
-
-      }
-    );
-
-
-    staggerElements.forEach(
-      element => {
-
-        element.classList.add(
-          "visible"
-        );
-
-      }
+      element =>
+        element.classList.add("visible")
     );
 
   }
 
 
   /* =====================================================
-     HERO VIDEO PARALLAX
-  ====================================================== */
+     HERO VIDEO
+     ===================================================== */
 
   const heroVideo =
     document.querySelector(
-      ".hero-video"
+      ".hero-video video"
     );
 
 
-  if(
-    heroVideo &&
-    !reduceMotion
-  ){
+  if (heroVideo) {
 
-    let ticking = false;
+    const playVideo = () => {
 
+      const promise =
+        heroVideo.play();
 
-    function updateParallax(){
+      if (promise !== undefined) {
 
-      if(
-        window.innerWidth <= 950
-      ){
-
-        heroVideo.style.transform =
-          "";
-
-        ticking = false;
-
-        return;
+        promise.catch(() => {});
 
       }
 
-
-      const rect =
-        heroVideo.getBoundingClientRect();
+    };
 
 
-      const viewportCenter =
-        window.innerHeight / 2;
+    if (
+      heroVideo.readyState >= 2
+    ) {
 
+      playVideo();
 
-      const elementCenter =
-        rect.top +
-        rect.height / 2;
+    } else {
 
-
-      const distance =
-        viewportCenter -
-        elementCenter;
-
-
-      const movement =
-        Math.max(
-          -10,
-          Math.min(
-            10,
-            distance * .018
-          )
-        );
-
-
-      heroVideo.style.transform =
-        `translateY(${movement}px)`;
-
-
-      ticking = false;
+      heroVideo.addEventListener(
+        "loadeddata",
+        playVideo,
+        { once: true }
+      );
 
     }
-
-
-    window.addEventListener(
-      "scroll",
-      () => {
-
-        if(!ticking){
-
-          requestAnimationFrame(
-            updateParallax
-          );
-
-          ticking = true;
-
-        }
-
-      },
-      {
-        passive:true
-      }
-    );
 
   }
 
 
   /* =====================================================
-     DESKTOP BUTTON MAGNETIC EFFECT
-  ====================================================== */
+     CLINIC VIDEO
+     ===================================================== */
 
-  if(
-    !reduceMotion &&
-    window.innerWidth > 950
-  ){
-
-    document
-      .querySelectorAll(
-        ".button-primary, .nav-appointment"
-      )
-      .forEach(
-        button => {
-
-          button.addEventListener(
-            "mousemove",
-            event => {
-
-              const rect =
-                button.getBoundingClientRect();
+  const clinicVideo =
+    document.querySelector(
+      ".clinic-video-section video"
+    );
 
 
-              const x =
-                event.clientX -
-                rect.left -
-                rect.width / 2;
+  if (clinicVideo) {
+
+    const playClinicVideo = () => {
+
+      const promise =
+        clinicVideo.play();
+
+      if (promise !== undefined) {
+
+        promise.catch(() => {});
+
+      }
+
+    };
 
 
-              const y =
-                event.clientY -
-                rect.top -
-                rect.height / 2;
+    if (
+      clinicVideo.readyState >= 2
+    ) {
+
+      playClinicVideo();
+
+    } else {
+
+      clinicVideo.addEventListener(
+        "loadeddata",
+        playClinicVideo,
+        { once: true }
+      );
+
+    }
+
+  }
 
 
-              button.style.transform =
-                `translate(
-                  ${x * .07}px,
-                  ${y * .07}px
-                )`;
+  /* =====================================================
+     YEAR
+     ===================================================== */
 
-            }
-          );
+  const year =
+    document.getElementById("year");
 
 
-          button.addEventListener(
-            "mouseleave",
-            () => {
+  if (year) {
 
-              button.style.transform =
-                "";
+    year.textContent =
+      new Date().getFullYear();
 
-            }
-          );
+  }
+
+
+  /* =====================================================
+     SMOOTH ANCHORS
+     ===================================================== */
+
+  document
+    .querySelectorAll(
+      'a[href^="#"]'
+    )
+    .forEach(link => {
+
+      link.addEventListener(
+        "click",
+        event => {
+
+          const targetId =
+            link.getAttribute("href");
+
+
+          if (
+            !targetId ||
+            targetId === "#"
+          ) {
+
+            return;
+
+          }
+
+
+          const target =
+            document.querySelector(
+              targetId
+            );
+
+
+          if (!target) {
+            return;
+          }
+
+
+          event.preventDefault();
+
+
+          target.scrollIntoView({
+            behavior: "smooth",
+            block: "start"
+          });
 
         }
       );
 
+    });
+
+
+  /* =====================================================
+     DR. SHEENU PORTRAIT
+     ===================================================== */
+
+  const portrait =
+    document.querySelector(
+      ".doctor-portrait img"
+    );
+
+
+  if (portrait) {
+
+    if (portrait.complete) {
+
+      portrait.classList.add(
+        "loaded"
+      );
+
+    } else {
+
+      portrait.addEventListener(
+        "load",
+        () => {
+
+          portrait.classList.add(
+            "loaded"
+          );
+
+        },
+        { once: true }
+      );
+
+    }
+
   }
+
+
+  /* =====================================================
+     PAGE READY
+     ===================================================== */
+
+  setTimeout(() => {
+
+    body.classList.add(
+      "page-ready"
+    );
+
+  }, 50);
 
 });
