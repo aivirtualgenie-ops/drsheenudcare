@@ -1,6 +1,8 @@
 document.addEventListener("DOMContentLoaded", () => {
 
-  const body = document.body;
+
+  const body =
+    document.body;
 
   const intro =
     document.getElementById("intro");
@@ -26,9 +28,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
     }
 
+
     intro.classList.add("finished");
 
     body.classList.remove("loading");
+
 
     setTimeout(() => {
 
@@ -69,23 +73,32 @@ document.addEventListener("DOMContentLoaded", () => {
      MOBILE MENU
      ===================================================== */
 
-  if (menuButton && navigation) {
+  if (
+    menuButton &&
+    navigation
+  ) {
 
     menuButton.addEventListener(
       "click",
       () => {
 
         const isOpen =
-          navigation.classList.toggle("open");
+          navigation.classList.toggle(
+            "open"
+          );
+
 
         menuButton.classList.toggle(
           "active",
           isOpen
         );
 
+
         menuButton.setAttribute(
           "aria-expanded",
-          isOpen ? "true" : "false"
+          isOpen
+            ? "true"
+            : "false"
         );
 
       }
@@ -122,6 +135,63 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
   /* =====================================================
+     TEAM DROPDOWN
+     ===================================================== */
+
+  const teamToggle =
+    document.getElementById(
+      "teamToggle"
+    );
+
+  const teamList =
+    document.getElementById(
+      "teamList"
+    );
+
+
+  if (
+    teamToggle &&
+    teamList
+  ) {
+
+    teamToggle.addEventListener(
+      "click",
+      () => {
+
+        const isOpen =
+          teamList.classList.toggle(
+            "open"
+          );
+
+
+        teamToggle.classList.toggle(
+          "open",
+          isOpen
+        );
+
+
+        teamToggle.setAttribute(
+          "aria-expanded",
+          isOpen
+            ? "true"
+            : "false"
+        );
+
+
+        teamList.setAttribute(
+          "aria-hidden",
+          isOpen
+            ? "false"
+            : "true"
+        );
+
+      }
+    );
+
+  }
+
+
+  /* =====================================================
      SCROLL REVEAL
      ===================================================== */
 
@@ -139,21 +209,29 @@ document.addEventListener("DOMContentLoaded", () => {
       new IntersectionObserver(
         entries => {
 
-          entries.forEach(entry => {
+          entries.forEach(
+            entry => {
 
-            if (!entry.isIntersecting) {
-              return;
+              if (
+                !entry.isIntersecting
+              ) {
+
+                return;
+
+              }
+
+
+              entry.target.classList.add(
+                "visible"
+              );
+
+
+              observer.unobserve(
+                entry.target
+              );
+
             }
-
-            entry.target.classList.add(
-              "visible"
-            );
-
-            observer.unobserve(
-              entry.target
-            );
-
-          });
+          );
 
         },
         {
@@ -166,14 +244,25 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
     revealElements.forEach(
-      element => observer.observe(element)
+      element => {
+
+        observer.observe(
+          element
+        );
+
+      }
     );
 
   } else {
 
     revealElements.forEach(
-      element =>
-        element.classList.add("visible")
+      element => {
+
+        element.classList.add(
+          "visible"
+        );
+
+      }
     );
 
   }
@@ -196,9 +285,14 @@ document.addEventListener("DOMContentLoaded", () => {
       const promise =
         heroVideo.play();
 
-      if (promise !== undefined) {
 
-        promise.catch(() => {});
+      if (
+        promise !== undefined
+      ) {
+
+        promise.catch(
+          () => {}
+        );
 
       }
 
@@ -216,7 +310,9 @@ document.addEventListener("DOMContentLoaded", () => {
       heroVideo.addEventListener(
         "loadeddata",
         playVideo,
-        { once: true }
+        {
+          once: true
+        }
       );
 
     }
@@ -236,18 +332,24 @@ document.addEventListener("DOMContentLoaded", () => {
 
   if (clinicVideo) {
 
-    const playClinicVideo = () => {
+    const playClinicVideo =
+      () => {
 
-      const promise =
-        clinicVideo.play();
+        const promise =
+          clinicVideo.play();
 
-      if (promise !== undefined) {
 
-        promise.catch(() => {});
+        if (
+          promise !== undefined
+        ) {
 
-      }
+          promise.catch(
+            () => {}
+          );
 
-    };
+        }
+
+      };
 
 
     if (
@@ -261,7 +363,9 @@ document.addEventListener("DOMContentLoaded", () => {
       clinicVideo.addEventListener(
         "loadeddata",
         playClinicVideo,
-        { once: true }
+        {
+          once: true
+        }
       );
 
     }
@@ -274,7 +378,9 @@ document.addEventListener("DOMContentLoaded", () => {
      ===================================================== */
 
   const year =
-    document.getElementById("year");
+    document.getElementById(
+      "year"
+    );
 
 
   if (year) {
@@ -300,7 +406,9 @@ document.addEventListener("DOMContentLoaded", () => {
         event => {
 
           const targetId =
-            link.getAttribute("href");
+            link.getAttribute(
+              "href"
+            );
 
 
           if (
@@ -320,7 +428,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
           if (!target) {
+
             return;
+
           }
 
 
@@ -350,7 +460,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
   if (portrait) {
 
-    if (portrait.complete) {
+    if (
+      portrait.complete
+    ) {
 
       portrait.classList.add(
         "loaded"
@@ -367,7 +479,9 @@ document.addEventListener("DOMContentLoaded", () => {
           );
 
         },
-        { once: true }
+        {
+          once: true
+        }
       );
 
     }
@@ -386,5 +500,6 @@ document.addEventListener("DOMContentLoaded", () => {
     );
 
   }, 50);
+
 
 });
